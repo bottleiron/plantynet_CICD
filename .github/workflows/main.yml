@@ -28,8 +28,9 @@ jobs:
         
     - name: Build the application
       # 직접 명령어를 실행하여 애플리케이션을 빌드합니다.
-      run: ./gradlew bootJar  # Gradle을 사용하여 JAR 파일을 빌드합니다.
-
+      run:  |
+          cd subdirectory  # gradlew 파일이 있는 디렉토리로 변경
+          ./gradlew bootJar
     - name: Deploy to Server
       # SSH를 통해 배포 서버에 애플리케이션을 배포합니다.
       uses: appleboy/ssh-action@v0.1.5  # SSH 액션을 사용하여 배포 서버에 접속합니다.
