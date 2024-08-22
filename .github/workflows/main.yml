@@ -50,6 +50,6 @@ jobs:
         script: |
           # 배포 서버에서 실행할 스크립트입니다.
           mkdir -p /home/bottleiron_h/app  # 배포 디렉토리를 생성합니다.
-          scp ./PLANTY_CICD_TEST/build/libs/plantynet_CICD_TEST-0.0.1-SNAPSHOT.war /home/bottleiron_h/app/  # 빌드한 JAR 파일을 배포 서버에 복사합니다.
+          scp ./plantynet_CICD_TEST/build/libs/plantynet_CICD_TEST-0.0.1-SNAPSHOT.war /home/bottleiron_h/app/  # 빌드한 JAR 파일을 배포 서버에 복사합니다.
           pkill -f 'java -jar /home/bottleiron_h/app/plantynet_CICD_TEST-0.0.1-SNAPSHOT.war' || true  # 기존에 실행 중인 Java 프로세스를 종료합니다. 프로세스가 없으면 무시합니다.
           nohup java -jar /home/bottleiron_h/app/plantynet_CICD_TEST-0.0.1-SNAPSHOT.war > app.log 2>&1 &  # 애플리케이션을 백그라운드에서 실행합니다. 로그는 app.log 파일로 리디렉션됩니다.
