@@ -35,7 +35,7 @@ jobs:
       run: gradle --version
       
     - name: Build with Gradle
-      run: ./gradlew bootJar  # 루트 디렉토리에 gradlew가 있는 경우
+      run: gradle bootJar  # Gradle 명령어 사용
       
     - name: Deploy to Server
       # SSH를 통해 배포 서버에 애플리케이션을 배포합니다.
