@@ -11,6 +11,6 @@ public class TestController
 	@ResponseBody
 	public String test()
 	{
-		return "2024-08-24 Script modify update!!";
+		return "2024-08-24 firewall test";
 	}
 }
