@@ -61,10 +61,11 @@ jobs:
         script: |
           echo "Killing existing Java processes"
           pkill -f 'java -jar *.jar' || true
-          sleep 5  # 잠시 기다려서 프로세스가 완전히 종료되도록 합니다
+          sleep 10  # 잠시 기다려서 프로세스가 완전히 종료되도록 합니다
           echo "Changing directory"
           cd /home/${{ secrets.SSH_USERNAME }}/app/libs
           echo "Starting the new application instance and logging ";
+          chmod 755 ./plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar
           nohup java -jar plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar > /home/${{ secrets.SSH_USERNAME }}/app/libs/app.log 2>&1 &
           echo "Script completed"
           exit 0
