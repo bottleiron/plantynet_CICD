@@ -65,7 +65,7 @@ jobs:
           echo "Changing directory"
           cd /home/${{ secrets.SSH_USERNAME }}/app/libs
           echo "Starting the new application instance and logging ";
-          chmod 755 ./plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar
+          chmod 755 ./*
           nohup java -jar plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar > /home/${{ secrets.SSH_USERNAME }}/app/libs/app.log 2>&1 &
           echo "Script completed"
           exit 0
