@@ -46,7 +46,7 @@ jobs:
        host: ${{ secrets.SSH_HOST }}
        key: ${{ secrets.SSH_PRIVATE_KEY }}
        port: ${{ secrets.SSH_PORT }}
-       source: "./plantynet_CICD_TEST/build/libs/*.war"
+       source: "./build/libs/*"
        target: "/home/bottleiron_h/app"
        strip_components: 2
       
