@@ -60,12 +60,12 @@ jobs:
         port: ${{ secrets.SSH_PORT }}  # SSH 접속 포트를 지정합니다.
         script: |
           echo "Killing existing Java processes"
-          sudo pkill -f 'java -jar /home/bottleiron_h/app/libs/plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar' || true
+          sudo pkill -f 'java -jar *.jar' || true
           sleep 5  # 잠시 기다려서 프로세스가 완전히 종료되도록 합니다
           echo "Changing directory"
           cd /home/${{ secrets.SSH_USERNAME }}/app/libs
           echo "Starting the new application instance and logging ";
-           sudo nohup java -jar plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar > /home/${{ secrets.SSH_USERNAME }}/app/libs/app.log 2>&1 &
+          sudo nohup java -jar plantynet_CICD_TEST-0.0.1-SNAPSHOT.jar > /home/${{ secrets.SSH_USERNAME }}/app/libs/app.log 2>&1 &
           echo "Script completed"
           exit 0
         command_timeout: 30s     # SSH 명령어 타임아웃 설정 s h m 시간단위 명시 필수
