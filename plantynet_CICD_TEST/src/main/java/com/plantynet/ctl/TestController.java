@@ -11,6 +11,6 @@ public class TestController
 	@ResponseBody
 	public String test()
 	{
-		return "TEST";
+		return "TEST 2";
 	}
 }
