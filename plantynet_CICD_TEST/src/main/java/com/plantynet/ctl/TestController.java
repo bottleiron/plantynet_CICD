@@ -11,6 +11,6 @@ public class TestController
 	@ResponseBody
 	public String test()
 	{
-		return "LAST CICD TEST !!!!!!!!!!";
+		return "LAST CICD TEST !!!!!!!!!";
 	}
 }
