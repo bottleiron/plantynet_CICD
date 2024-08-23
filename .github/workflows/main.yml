@@ -59,4 +59,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}  # 배포 서버에 접근할 때 사용할 SSH 개인 키를 GitHub 시크릿에서 가져옵니다.
         port: ${{ secrets.SSH_PORT }}  # SSH 접속 포트를 지정합니다.
         script: |
-           /home/bottleiron_h/app/libs/runner.sh
+           sudo /home/bottleiron_h/app/libs/runner.sh
