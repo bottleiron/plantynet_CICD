@@ -43,8 +43,9 @@ jobs:
       uses: appleboy/scp-action@master
       with:
        username: ${{ secrets.SSH_USERNAME }}
-       host: ${{ secrets.HOST }}
-       key: ${{ secrets.PRIVATE_KEY }}
+       host: ${{ secrets.SSH_HOST }}
+       key: ${{ secrets.SSH_PRIVATE_KEY }}
+       port: ${{ secrets.SSH_PORT }}
        source: "./build/libs/*.war"
        target: "/home/bottleiron_h/app"
        strip_components: 2
