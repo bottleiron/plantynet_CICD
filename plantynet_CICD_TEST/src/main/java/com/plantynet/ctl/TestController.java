@@ -11,6 +11,6 @@ public class TestController
 	@ResponseBody
 	public String test()
 	{
-		return "2024-08-24 firewall test";
+		return "Git Actions Index...";
 	}
 }
