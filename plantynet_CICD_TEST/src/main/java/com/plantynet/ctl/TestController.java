@@ -11,6 +11,6 @@ public class TestController
 	@ResponseBody
 	public String test()
 	{
-		return "Git Actions Index...";
+		return "Git Actions Index CICD TEST";
 	}
 }
